@@ -36,12 +36,10 @@ require('dotenv').config();
 	// and scrape the balance data there
 	frame = page.frames().find(fr => fr.name() === 'atm');
 	const balanceInfo = await frame.evaluate(() => {
-		return {
-			    'account_no': document.querySelectorAll('table')[2].querySelectorAll('tr')[1].querySelectorAll('td')[0].textContent.trim(),
-				'account_type': document.querySelectorAll('table')[2].querySelectorAll('tr')[1].querySelectorAll('td')[1].textContent.trim(),
-				'currency': document.querySelectorAll('table')[2].querySelectorAll('tr')[1].querySelectorAll('td')[2].textContent.trim(),
-			   	'balance': document.querySelectorAll('table')[2].querySelectorAll('tr')[1].querySelectorAll('td')[3].textContent.trim(),
-			   }
+		return {'account_no': document.querySelectorAll('table')[2].querySelectorAll('tr')[1].querySelectorAll('td')[0].textContent.trim(),
+			'account_type': document.querySelectorAll('table')[2].querySelectorAll('tr')[1].querySelectorAll('td')[1].textContent.trim(),
+			'currency': document.querySelectorAll('table')[2].querySelectorAll('tr')[1].querySelectorAll('td')[2].textContent.trim(),
+			'balance': document.querySelectorAll('table')[2].querySelectorAll('tr')[1].querySelectorAll('td')[3].textContent.trim()}
 	});
 	await frame.waitFor(3000);
 
