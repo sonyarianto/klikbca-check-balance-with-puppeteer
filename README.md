@@ -1,6 +1,9 @@
 # klikbca-check-balance-with-puppeteer
 Check BCA balance through KlikBCA with Puppeteer.
 
+## Quick Info
+KlikBCA is internet banking service from BCA (Bank Central Asia) in Indonesia.
+
 ## Preparation
 I assume you already have NodeJS and npm installed on your machine.
 
