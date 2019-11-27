@@ -9,6 +9,7 @@ require('dotenv').config();
 	// let's go to the BCA internet banking website
 	const browser = await puppeteer.launch(launchOptions);
 	const page = await browser.newPage();
+	await page.setViewport({width: 1366, height: 768});
 	await page.goto('https://ibank.klikbca.com');
 
 	// do the login
